@@ -33,7 +33,7 @@ has_many :scenes_images
 ### Association
 has_many :scenes
 
-## scenes_imagesテーブル
+## scene_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
