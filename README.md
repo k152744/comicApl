@@ -1,5 +1,5 @@
 
-##usersテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false,unique: true|
@@ -10,7 +10,7 @@
 has_many :scenes
 has_many :likes
 
-##scenesテーブル
+## scenesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |title|string|null: false|
@@ -24,7 +24,7 @@ belongs_to :comic
 has_many :likes
 has_many :scenes_images
 
-##comicsテーブル
+## comicsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |title|string|null: false,unique: true|
@@ -33,7 +33,7 @@ has_many :scenes_images
 ### Association
 has_many :scenes
 
-##scenes_imagesテーブル
+## scenes_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
@@ -42,7 +42,7 @@ has_many :scenes
 ### Association
 belongs_to :scene
 
-##likesテーブル
+## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
