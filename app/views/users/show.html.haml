@@ -1,0 +1,24 @@
+.main--wrapper
+  .container--user
+    %h2 プロフィール
+    .container--user__left
+      = image_tag "person.png",size:"200x200",class: "person--icon"
+      %h3
+        = @user.username
+      .container--user__left__menu
+        = link_to "編集", edit_user_registration_path
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
+        = link_to "ログアウト", 
+    .container--user__right
+      %h3 このユーザーの投稿記事
+      .container--user__right__list
+        -# - @scenes.each do |scene|
+        -#   .scene--content
+        -#     %h3 
+        -#       = scene.title
+        -#     .scene--data
+        -#       %span
+        -#        = scene.created_at
+
+
+

@@ -1,0 +1,8 @@
+.main--wrapper
+  .container--comics
+    %h2 漫画一覧
+    %ul
+      - @comics.each do |comic|
+        %li
+          = comic.title
+          = image_tag comic.image_url.to_s

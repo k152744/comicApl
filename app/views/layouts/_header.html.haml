@@ -1,0 +1,21 @@
+.header
+  .header__logo
+    = link_to root_path do
+      = image_tag "logo.png" , class: "logo--image" 
+  .header__menus
+    %ul
+      - if user_signed_in?
+        %li 
+          = link_to comics_path do
+            COMICS
+        %li 
+          = link_to user_path(current_user) do
+            PROFILE
+      - else
+        %li 
+          = link_to new_user_registration_path do
+            SIGNUP
+        %li
+          = link_to new_user_session_path do
+            .login--btn
+              LOGIN

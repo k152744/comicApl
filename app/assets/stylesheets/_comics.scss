@@ -1,0 +1,22 @@
+.container--comics{
+  height:100%;
+  padding:40px;
+  h2{
+    @include h2style;
+  }
+  ul{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-top:10%;
+  }
+  li{
+     text-align: center;
+  }
+  h3{
+    text-align: center;
+    color:white;
+    padding-top:15px;
+  }
+}
