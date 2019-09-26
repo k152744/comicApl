@@ -7,12 +7,14 @@ class ScenesController < ApplicationController
 
   def new
     @scene = Scene.new
+    # @image = Scene_image.new
   end
 
   def create
-    @scene = @comic.scenes.new(scene_params)
+    @scene = Scene.new(scene_params)
+    # binding.pry
     if @scene.save
-      redirect_to comic_scenes_path(@scene)
+      redirect_to comic_scenes_path(@comic)
     else
       render :new
     end
@@ -41,15 +43,16 @@ class ScenesController < ApplicationController
       else
         render :edit
       end
+    end
   end
 
   private
 
   def set_comic
-    @comic = Comic.find(params[:group_id])
+    @comic = Comic.find(params[:comic_id])
   end
 
   def scene_params
-    params.require(:scene).permit(:title,:content).merge(user_id: current_user.id)
+    params.require(:scene).permit(:title,:content).merge(user_id: current_user.id,comic_id: @comic.id)
   end
 end

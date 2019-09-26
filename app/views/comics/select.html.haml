@@ -1,10 +1,10 @@
 .main--wrapper
   .container--comics
     %h2 漫画一覧
-    %p.sentence 画像をクリックすると名場面一覧が表示されます。
+    %p.sentence 好きな漫画をクリックしてお気に入りの名場面を投稿しよう
     %ul
       - @comics.each do |comic|
-        = link_to comic_scenes_path(comic) do
+        = link_to new_comic_scene_path(comic) do
           %li
             = image_tag comic.image_url,size:"250x300"
             %h3

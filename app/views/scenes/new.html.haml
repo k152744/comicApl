@@ -1,1 +1,12 @@
 .main--wrapper
+  .container--new
+    %h2 名場面を投稿する
+    %p.sentence 名場面のタイトルと内容を入力してみよう
+    .form
+      = form_with model:@scene,url: comic_scenes_path(@comic),id: "new--scene", local: true  do |f|
+        .field
+          = f.text_field :title, autofocus: true,placeholder:"名場面のタイトルを入力してください"
+        .field
+          = f.text_field :content, autofocus: true,placeholder:"名場面の内容を入力してください"
+        .actions
+          = f.submit "投稿する",class:"post--btn"

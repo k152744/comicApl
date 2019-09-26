@@ -1,7 +1,26 @@
 .container--scenes{
   height:100%;
-  padding:40px;
+  padding:40px 40px 200px 40px;
   h2{
     @include h2style;
+  }
+  
+  &__list{
+    padding:50px 200px;
+    h3{
+      font-weight:bold;
+      color:#FFBBFF;
+      border: 1px solid #EEFFFF;
+      padding:15px;
+      text-align: center;
+      font-size:25px;
+    }
+    p{
+      color:white;
+      border: 1px solid #EEFFFF;
+      margin-bottom:50px;
+      padding:30px;
+      text-align: center;
+    }
   }
 }

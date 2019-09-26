@@ -8,5 +8,8 @@ Rails.application.routes.draw do
     resources :scenes do
       resources :likes, only: [:create, :destroy]
     end
+    collection do
+      get :select
+    end
   end
 end

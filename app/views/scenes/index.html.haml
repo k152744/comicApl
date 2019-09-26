@@ -1,6 +1,14 @@
 .main--wrapper
   .container--scenes
     %h2 名場面一覧
-    %ul
-      %li
+    %p.sentence
+      = @comic.title
+    .container--scenes__list
+      %ul
+        - @scenes.each do |scene|
+          %li
+            %h3
+              = scene.title
+            %p
+              = scene.content
         
