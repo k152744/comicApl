@@ -12,7 +12,6 @@ class ScenesController < ApplicationController
 
   def create
     @scene = Scene.new(scene_params)
-    # binding.pry
     if @scene.save
       redirect_to comic_scenes_path(@comic)
     else
@@ -29,17 +28,19 @@ class ScenesController < ApplicationController
   end
 
   def update
+    @scene = Scene.find(params[:id])
     if @scene.update(scene_params)
-      redirect_to comic_scenes_path(@scene)
+      redirect_to user_path(current_user)
     else
       render :edit
     end
   end
 
   def destroy
+    @scene = Scene.find(params[:id])
     if current_user.id == @scene.user_id
       if @scene.destroy
-        redirect_to comic_scenes_path(@scene)
+        redirect_to user_path(current_user)
       else
         render :edit
       end
@@ -53,6 +54,6 @@ class ScenesController < ApplicationController
   end
 
   def scene_params
-    params.require(:scene).permit(:title,:content).merge(user_id: current_user.id,comic_id: @comic.id)
+    params.require(:scene).permit(:title,:content,:image).merge(user_id: current_user.id,comic_id: @comic.id)
   end
 end

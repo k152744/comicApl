@@ -8,5 +8,7 @@
           = f.text_field :title, autofocus: true,placeholder:"名場面のタイトルを入力してください"
         .field
           = f.text_field :content, autofocus: true,placeholder:"名場面の内容を入力してください"
+        .field 
+          = f.file_field :image, autofocus: true
         .actions
           = f.submit "投稿する",class:"post--btn"

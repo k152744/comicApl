@@ -2,10 +2,12 @@ class Scene < ApplicationRecord
   belongs_to :user
   belongs_to :comic
   has_many :likes
-  has_many :scenes_images
+
+  mount_uploader :image, ImageUploader
 
   validates :title, presence: true
   validates :content, presence: true
+  validates :image, presence: true
   validates :user_id, presence: true
   validates :comic_id, presence: true
   

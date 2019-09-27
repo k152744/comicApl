@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_20_105305) do
+ActiveRecord::Schema.define(version: 2019_09_27_054421) do
 
   create_table "comics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -28,14 +28,6 @@ ActiveRecord::Schema.define(version: 2019_09_20_105305) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "scene_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image", null: false
-    t.bigint "scene_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["scene_id"], name: "index_scene_images_on_scene_id"
-  end
-
   create_table "scenes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -43,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_09_20_105305) do
     t.text "content", null: false
     t.bigint "user_id"
     t.bigint "comic_id"
+    t.string "image", null: false
     t.index ["comic_id"], name: "index_scenes_on_comic_id"
     t.index ["user_id"], name: "index_scenes_on_user_id"
   end
@@ -63,7 +56,6 @@ ActiveRecord::Schema.define(version: 2019_09_20_105305) do
 
   add_foreign_key "likes", "scenes"
   add_foreign_key "likes", "users"
-  add_foreign_key "scene_images", "scenes"
   add_foreign_key "scenes", "comics"
   add_foreign_key "scenes", "users"
 end

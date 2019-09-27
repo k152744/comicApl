@@ -2,7 +2,10 @@
   .container--user.clearfix
     %h2 プロフィール
     .container--user__left
-      = image_tag "person.png",size:"200x200",class: "person--icon"
+      - if @user.image.present?
+        = image_tag @user.image.url,size:"200x200",class: "person--icon"
+      - else
+        = image_tag "person.png",size:"200x200",class: "person--icon"
       %h3
         = @user.username
       .container--user__left__menu
@@ -14,11 +17,12 @@
       .container--user__right__list
         %ul
           - @scenes.each do |scene|
-            %li
-              %h3
-                = scene.title
-              %p
-                = scene.comic.title
+            = link_to "/comics/#{scene.comic_id}/scenes/#{scene.id}/edit" do
+              %li
+                %h3
+                  = scene.title
+                %p
+                  = scene.comic.title
             
 
 
