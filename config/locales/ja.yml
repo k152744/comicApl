@@ -8,5 +8,8 @@ ja:
         email: メールアドレス
         current_password: 現在のパスワード
         image: 現在のユーザー画像
-        remember_me: メールアドレス・パスワードを保存する
+      scene:
+        title: タイトル
+        content: 内容
+        image: 画像
       

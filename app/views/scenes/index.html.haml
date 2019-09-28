@@ -2,7 +2,9 @@
   .container--scenes
     %h2 名場面一覧
     %p.sentence
+      (
       = @comic.title
+      )
     .container--scenes__list
       %ul
         - @scenes.each do |scene|

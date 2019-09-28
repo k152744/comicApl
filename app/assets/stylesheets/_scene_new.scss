@@ -4,4 +4,36 @@
   h2{
     @include h2style;
   }
+  .form{
+    margin-top:40px;
+    padding:50px;
+    .field{
+      margin-bottom:30px;
+    }
+    .image--field{
+      text-align: center;
+    }
+    label{
+      color:white;
+      font-weight:bold; 
+    }
+    .scene--input{
+      margin-top:10px;
+      min-width:100%;
+    }
+    .title--content{
+      height:300px;
+    }
+    .actions{
+      text-align: center;
+      input{
+        border-style: none;
+        padding:10px 20px;
+        cursor:pointer;
+        background-color: #FF0000;
+        color:white;
+        border-radius: 5px;
+      }
+    }
+  }
 }

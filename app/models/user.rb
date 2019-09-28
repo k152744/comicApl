@@ -5,8 +5,10 @@ class User < ApplicationRecord
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  def remember_me
+    true
+  end
   
-
   has_many :scenes
   has_many :likes
 end

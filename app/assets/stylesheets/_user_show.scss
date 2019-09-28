@@ -1,27 +1,42 @@
 .container--user{
   height:100%;
   padding:40px;
+  .user--contents{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+  }
   h2{
     @include h2style;
     margin-bottom: 50px;
   }
   &__left{
-    float:left;
     h3{
       text-align: center;
       font-size: 30px;
       font-weight:bold;
       color:white;
     }
-    a{
-      display:block;
+    &__menu{
+      margin-top:15px;
+      a{
+        display:block;
+        color:white;
+        padding:5px 0;
+        border: 1px solid #EEFFFF;
+        text-align: center;
+        margin-bottom:5px;
+        &:hover{
+          color:red;
+        }
+      }
     }
   }
   &__right{
-    float:left;
-    margin-left:130px;
+    margin-left:40px;
     h3{
       font-size: 30px;
+      color:#EEFFFF;
     }
     &__list{
       margin-top:20px;
