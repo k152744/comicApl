@@ -1,0 +1,39 @@
+.header{
+  height:50px;
+  background-color: #222;
+  border-bottom: solid 1px #bcbcbc;
+  z-index: 1;
+  width: 100%;
+  position: fixed;
+  &__logo{
+    float: left;
+    height: 50px;
+    .logo--image{
+      height:48px;
+      width:140px;
+    }
+  }
+  &__menus{
+    float: right;
+    li{
+      float:left;
+      line-height: 50px;
+      padding:0 20px;
+      a{
+        color:white;
+        &:hover{
+          color:red;
+        }
+      }
+    }
+    .login--btn{
+      background-color:red;
+      line-height: 40px;
+      margin:5px;
+      padding: 0 15px;
+      &:hover{
+        color:white;
+      }
+    }
+  }
+}

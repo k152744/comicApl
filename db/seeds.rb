@@ -1,7 +1,39 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Comic.create!(
+  title: 'ジョジョの奇妙な冒険',
+  image: open("#{Rails.root}/db/fixtures/01.jpeg")
+)
+
+Comic.create!(
+  title: 'キングダム',
+  image: open("#{Rails.root}/db/fixtures/02.jpg")
+)
+
+Comic.create!(
+  title: 'ドラゴンボール',
+  image: open("#{Rails.root}/db/fixtures/03.png")
+)
+
+Comic.create!(
+  title: 'ワンピース',
+  image: open("#{Rails.root}/db/fixtures/04.jpg")
+)
+
+Comic.create!(
+  title: 'スラムダンク',
+  image: open("#{Rails.root}/db/fixtures/05.jpg")
+)
+
+Comic.create!(
+  title: '賭博黙示録カイジ',
+  image: open("#{Rails.root}/db/fixtures/06.png")
+)
+
+Comic.create!(
+  title: '北斗の拳',
+  image: open("#{Rails.root}/db/fixtures/07.jpg")
+)
+
+Comic.create!(
+  title: 'HUNTER×HUNTER',
+  image: open("#{Rails.root}/db/fixtures/08.jpg")
+)

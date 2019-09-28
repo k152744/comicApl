@@ -33,15 +33,6 @@ has_many :scenes_images
 ### Association
 has_many :scenes
 
-## scene_imagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image|string|null: false|
-|scene|references|null: false, foreign_key: true|
-
-### Association
-belongs_to :scene
-
 ## likesテーブル
 |Column|Type|Options|
 |------|----|-------|

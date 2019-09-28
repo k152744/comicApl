@@ -1,0 +1,19 @@
+.main--wrapper
+  .container--new
+    %h2 名場面を編集する
+    %p.sentence 名場面のタイトルと内容を入力してみよう
+    .form
+      = form_with model:@scene,url: comic_scene_path(@comic),id: "new--scene", local: true  do |f|
+        .field
+          = f.text_field :title, autofocus: true,placeholder:"名場面のタイトルを入力してください"
+        .field
+          = f.text_field :content, autofocus: true,placeholder:"名場面の内容を入力してください"
+        .field 
+          = f.file_field :image
+        .field
+          = image_tag @scene.image.url, size:"250x300"
+        .actions
+          = f.submit "投稿する",class:"post--btn"
+    .from--delete
+      = link_to "削除する", comic_scene_path(@comic), method: :delete
+          

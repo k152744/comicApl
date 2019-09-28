@@ -1,0 +1,41 @@
+.container--top{
+  text-align: center;
+  color: white;
+  flex: 1;
+  padding-top:50px;
+  background: image-url("fantasy.jpg") center center/ cover;
+  h1{
+    font-size: 56px;
+    padding-top: 200px;
+    padding-bottom: 60px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px black;
+  }
+
+  p {
+    font-size: 24px;
+    text-align: center;
+    line-height: 36px;
+    color:turquoise;
+  }
+
+  &__btn {
+    margin: 0 auto;
+    width: 400px;
+    padding: 60px;
+    .btn {
+      color: white;
+      display: inline-block;
+      background-color:red;
+      padding: 14px 35px;
+      font-size: 18px;
+      margin: 20px;
+      text-decoration:none;
+    }
+  
+    .login{
+      background-color: blue;
+    }
+  }
+}
