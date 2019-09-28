@@ -1,11 +1,11 @@
 .main--wrapper
   .container--comics
-    %h2 漫画一覧
+    %h2 名場面投稿
     %p.sentence 好きな漫画をクリックしてお気に入りの名場面を投稿しよう
-    %ul
+    .container--comics__list.clearfix
       - @comics.each do |comic|
         = link_to new_comic_scene_path(comic) do
-          %li
-            = image_tag comic.image_url,size:"250x300"
+          .comic--content
+            = image_tag comic.image_url,size:"200x250"
             %h3
               = comic.title

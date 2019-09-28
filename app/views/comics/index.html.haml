@@ -2,11 +2,11 @@
   .container--comics
     %h2 漫画一覧
     %p.sentence 画像をクリックすると名場面一覧が表示されます。
-    %ul
+    .container--comics__list.clearfix
       - @comics.each do |comic|
         = link_to comic_scenes_path(comic) do
-          %li
-            = image_tag comic.image_url,size:"250x300"
+          .comic--content
+            = image_tag comic.image_url,size:"200x250"
             %h3
               = comic.title
             

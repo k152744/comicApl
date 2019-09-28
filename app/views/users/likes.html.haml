@@ -12,19 +12,18 @@
         = link_to "編集", edit_user_registration_path
         = link_to "ログアウト", destroy_user_session_path, method: :delete
         = link_to "名場面を投稿する", select_comics_path
-        = link_to "いいねした名場面一覧", likes_user_path(current_user)
+        = link_to "投稿した名場面一覧", user_path(current_user)
     .container--user__right
-      %h3 このユーザーの投稿記事
+      %h3 いいねした名場面
       .container--user__right__list
         %ul
-          - @scenes.each do |scene|
-            = link_to "/comics/#{scene.comic_id}/scenes/#{scene.id}/edit" do
-              %li
-                %h3
-                  = scene.title
-                %p
-                  = scene.comic.title
-            
-
-
-
+          - @likes.each do |like|
+            %li
+              %h3
+                - scene = Scene.find_by(id: like.scene_id)
+                = scene.title
+              %p
+                = scene.comic.title
+              .iine
+                = link_to "/comics/#{scene.comic_id}/scenes/#{scene.id}/likes/#{like.id}" , method: :delete do
+                  %p いいねを解除する

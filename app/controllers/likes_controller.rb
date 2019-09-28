@@ -7,21 +7,18 @@ class LikesController < ApplicationController
       scene_id: params[:scene_id]
     )
     if like.save
-      redirect_to root_path
+      redirect_to likes_user_path(current_user)
     else
       redirect_to root_path
     end
   end
 
-  # def destroy
-  #   like = Like.find_by(
-  #     user_id: current_user.id
-  #     scene_id: params[:scene_id]
-  #   )
-  #   if like.destroy
-  #     redirect_to root_path
-  #   else
-  #     redirect_to root_path
-  #   end
-  # end
+  def destroy
+    like = current_user.likes.find_by(scene_id: params[:scene_id])
+    if like.destroy
+      redirect_to likes_user_path(current_user)
+    else
+      redirect_to root_path
+    end
+  end
 end

@@ -9,6 +9,9 @@
           = link_to comics_path do
             COMICS
         %li 
+          = link_to select_comics_path do
+            NEW SCENE
+        %li 
           = link_to user_path(current_user) do
             PROFILE
       - else

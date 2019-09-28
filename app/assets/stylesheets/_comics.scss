@@ -4,15 +4,16 @@
   h2{
     @include h2style;
   }
-  ul{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    margin-top:10%;
+  &__list{
+    min-width: 800px;
+    margin: 0 auto;
+    margin-top:40px;
   }
-  li{
-     text-align: center;
+  .comic--content{
+    text-align: center;
+    width:25%;
+    float:left;
+    margin-bottom:40px;
   }
   h3{
     text-align: center;

@@ -11,6 +11,7 @@
               = scene.title
             %p
               = scene.content
-            .iine
-              = link_to "/comics/#{scene.comic_id}/scenes/#{scene.id}/likes" , method: :post do
-                %p いいね
+            - if scene.user_id != current_user.id 
+              .iine
+                = link_to "/comics/#{scene.comic_id}/scenes/#{scene.id}/likes" , method: :post do
+                  %p いいね

@@ -1,10 +1,10 @@
 class ComicsController < ApplicationController
   def index
-    @comics = Comic.all.limit(4)
+    @comics = Comic.all
   end
 
   def select
-    @comics = Comic.all.limit(4)
+    @comics = Comic.all
   end
 
 end
