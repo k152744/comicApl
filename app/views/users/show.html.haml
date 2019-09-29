@@ -2,29 +2,26 @@
   .container--user.clearfix
     %h2 プロフィール
     .user--contents
-      .container--user__left
-        - if @user.image.present?
-          = image_tag @user.image.url,size:"200x200",class: "person--icon"
-        - else
-          = image_tag "person.png",size:"200x200",class: "person--icon"
-        %h3
-          = @user.username
-        .container--user__left__menu
-          = link_to "編集", edit_user_registration_path
-          = link_to "ログアウト", destroy_user_session_path, method: :delete
-          = link_to "名場面を投稿する", select_comics_path
-          = link_to "いいねした名場面一覧", likes_user_path(current_user)
+      = render partial: "user_menu"
       .container--user__right
         %h3 このユーザーが投稿した名場面
         .container--user__right__list
           %ul
             - @scenes.each do |scene|
-              = link_to "/comics/#{scene.comic_id}/scenes/#{scene.id}/edit" do
-                %li
+              %li
+                .user--scene--image
+                  = image_tag scene.image.url,size:"200x250"
+                .user--scene--contents
                   %h3
                     = scene.title
-                  %p
+                  %p.scene--comic--title
+                    (
                     = scene.comic.title
+                    )
+                  %p.scene--comic--content
+                    = scene.content
+                  %p
+                    = link_to "編集","/comics/#{scene.comic_id}/scenes/#{scene.id}/edit"
               
 
 

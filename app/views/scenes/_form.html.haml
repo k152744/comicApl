@@ -17,3 +17,6 @@
       = f.text_area :content, autofocus: true,placeholder:"名場面の内容を入力してください(400文字以内で入力してください)", class:"scene--input title--content"
     .actions
       = f.submit "投稿する"
+    - if request.path_info == "/comics/#{@scene.comic_id}/scenes/#{@scene.id}/edit"
+      .actions
+        = link_to "削除する", "/comics/#{@scene.comic_id}/scenes/#{@scene.id}", method: :delete

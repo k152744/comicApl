@@ -1,29 +1,26 @@
 .main--wrapper
   .container--user.clearfix
     %h2 プロフィール
-    .container--user__left
-      - if @user.image.present?
-        = image_tag @user.image.url,size:"200x200",class: "person--icon"
-      - else
-        = image_tag "person.png",size:"200x200",class: "person--icon"
-      %h3
-        = @user.username
-      .container--user__left__menu
-        = link_to "編集", edit_user_registration_path
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
-        = link_to "名場面を投稿する", select_comics_path
-        = link_to "投稿した名場面一覧", user_path(current_user)
-    .container--user__right
-      %h3 いいねした名場面
-      .container--user__right__list
-        %ul
-          - @likes.each do |like|
-            %li
-              %h3
-                - scene = Scene.find_by(id: like.scene_id)
-                = scene.title
-              %p
-                = scene.comic.title
-              .iine
-                = link_to "/comics/#{scene.comic_id}/scenes/#{scene.id}/likes/#{like.id}" , method: :delete do
-                  %p いいねを解除する
+    .user--contents
+      = render partial: "user_menu"
+      .container--user__right
+        %h3 いいねした名場面
+        .container--user__right__list
+          %ul
+            - @likes.each do |like|
+              %li
+                .user--scene--image
+                  - scene = Scene.find_by(id: like.scene_id)
+                  = image_tag scene.image.url,size:"200x250"
+                .user--scene--contents
+                  %h3
+                    = scene.title
+                  %p.scene--comic--title
+                    (
+                    = scene.comic.title
+                    )
+                  .iine--content
+                    = link_to "/comics/#{scene.comic_id}/scenes/#{scene.id}/likes/#{like.id}" , method: :delete do
+                      %i.iine--button いいねを解除する
+                  %p.scene--comic--content
+                    = scene.content
