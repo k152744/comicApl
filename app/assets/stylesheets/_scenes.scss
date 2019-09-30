@@ -19,6 +19,7 @@
     }
     .user--scene--contents{
       width:600px;
+      text-align:center
     }
     h3{
       text-align: center;
@@ -40,6 +41,11 @@
     .iine--content{
       text-align: center;
     }
+    .icon{
+      color:white;
+      display:inline-block;
+      
+    }
     .iine--button{
       display: inline-block;
       margin:0 auto;
@@ -47,6 +53,9 @@
       &:hover{
         color:red;
       }
+    }
+    span{
+      color:white;
     }
   }
 }

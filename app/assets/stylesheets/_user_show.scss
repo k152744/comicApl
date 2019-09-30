@@ -81,6 +81,15 @@
           color:red;
         }
       }
+      .edit--button{
+        text-align: center;
+        a{
+          color:white;
+          &:hover{
+            color:red;
+          }
+        }
+      }
     }
   }
 }

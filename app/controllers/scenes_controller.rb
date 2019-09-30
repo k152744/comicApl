@@ -1,13 +1,13 @@
 class ScenesController < ApplicationController
   before_action :set_comic
+  before_action :authenticate_user!
 
   def index
-    @scenes = @comic.scenes.limit(5).includes(:user)
+    @scenes = @comic.scenes.includes(:user).page(params[:page]).per(5)
   end
 
   def new
     @scene = Scene.new
-    # @image = Scene_image.new
   end
 
   def create

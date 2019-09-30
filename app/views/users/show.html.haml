@@ -18,11 +18,12 @@
                     (
                     = scene.comic.title
                     )
+                  .edit--button
+                    = link_to "編集","/comics/#{scene.comic_id}/scenes/#{scene.id}/edit"
                   %p.scene--comic--content
                     = scene.content
-                  %p
-                    = link_to "編集","/comics/#{scene.comic_id}/scenes/#{scene.id}/edit"
-              
+    .pagination--block
+      = paginate @scenes
 
 
 

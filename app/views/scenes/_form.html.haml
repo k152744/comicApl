@@ -1,22 +1,41 @@
 .form
-  = form_with model:@scene,url: comic_scenes_path(@comic),id: "new--scene", local: true  do |f|
-    .field
-      = f.label :title
-      %br
-      = f.text_field :title, autofocus: true,placeholder:"名場面のタイトルを入力してください(40文字以内で入力してください)", class:"scene--input title--input"
-    .field 
-      = f.label :image
-      %br
-      = f.file_field :image, autofocus: true
-    - if @scene.image.present?
-      .field.image--field
-        = image_tag @scene.image.url, size:"250x300"
-    .field
-      = f.label :content
-      %br
-      = f.text_area :content, autofocus: true,placeholder:"名場面の内容を入力してください(400文字以内で入力してください)", class:"scene--input title--content"
-    .actions
-      = f.submit "投稿する"
-    - if request.path_info == "/comics/#{@scene.comic_id}/scenes/#{@scene.id}/edit"
+  - if request.path_info == "/comics/#{@scene.comic_id}/scenes/#{@scene.id}/edit"
+    = form_with model:@scene,url: "/comics/#{@scene.comic_id}/scenes/#{@scene.id}",id: "new--scene", local: true  do |f|
+      .field
+        = f.label :title
+        %br
+        = f.text_field :title, autofocus: true,placeholder:"名場面のタイトルを入力してください(20文字以内で入力してください)", class:"scene--input title--input"
+      .field 
+        = f.label :image
+        %br
+        = f.file_field :image, autofocus: true
+      - if @scene.image.present?
+        .field.image--field
+          = image_tag @scene.image.url, size:"250x300"
+      .field
+        = f.label :content
+        %br
+        = f.text_area :content, autofocus: true,placeholder:"名場面の内容を入力してください(100文字以内で入力してください)", class:"scene--input title--content"
+      .actions
+        = f.submit "投稿する"
       .actions
         = link_to "削除する", "/comics/#{@scene.comic_id}/scenes/#{@scene.id}", method: :delete
+  - else
+    = form_with model:@scene,url: comic_scenes_path(@comic),id: "new--scene", local: true  do |f|
+      .field
+        = f.label :title
+        %br
+        = f.text_field :title, autofocus: true,placeholder:"名場面のタイトルを入力してください(20文字以内で入力してください)", class:"scene--input title--input"
+      .field 
+        = f.label :image
+        %br
+        = f.file_field :image, autofocus: true
+      - if @scene.image.present?
+        .field.image--field
+          = image_tag @scene.image.url, size:"250x300"
+      .field
+        = f.label :content
+        %br
+        = f.text_area :content, autofocus: true,placeholder:"名場面の内容を入力してください(100文字以内で入力してください)", class:"scene--input title--content"
+      .actions
+        = f.submit "投稿する"

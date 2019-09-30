@@ -21,5 +21,10 @@
                 .iine--content
                   = link_to "/comics/#{scene.comic_id}/scenes/#{scene.id}/likes" , method: :post do
                     %i.iine--button いいねする
+              = fa_icon 'heart', class: 'icon'
+              %span
+                = scene.likes.count
               %p.scene--comic--content
                 = scene.content
+    .pagination--block
+      = paginate @scenes
