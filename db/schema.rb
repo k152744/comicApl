@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_27_054421) do
+ActiveRecord::Schema.define(version: 2019_09_30_073807) do
 
   create_table "comics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_09_27_054421) do
     t.bigint "user_id"
     t.bigint "comic_id"
     t.string "image", null: false
+    t.integer "likes_count"
     t.index ["comic_id"], name: "index_scenes_on_comic_id"
     t.index ["user_id"], name: "index_scenes_on_user_id"
   end

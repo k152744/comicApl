@@ -2,16 +2,29 @@
   .container--scenes
     %h2 名場面一覧
     %p.sentence
+      (
       = @comic.title
+      )
     .container--scenes__list
       %ul
         - @scenes.each do |scene|
           %li
-            %h3
-              = scene.title
-            %p
-              = scene.content
-            - if scene.user_id != current_user.id 
-              .iine
-                = link_to "/comics/#{scene.comic_id}/scenes/#{scene.id}/likes" , method: :post do
-                  %p いいね
+            .user--scene--image
+              = image_tag scene.image.url,size:"200x250"
+            .user--scene--contents
+              %h3
+                = scene.title
+              %p.scene--comic--username
+                投稿者:
+                = scene.user.username
+              - if scene.user_id != current_user.id
+                .iine--content
+                  = link_to "/comics/#{scene.comic_id}/scenes/#{scene.id}/likes" , method: :post do
+                    %i.iine--button いいねする
+              = fa_icon 'heart', class: 'icon'
+              %span
+                = scene.likes.count
+              %p.scene--comic--content
+                = scene.content
+    .pagination--block
+      = paginate @scenes

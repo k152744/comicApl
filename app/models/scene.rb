@@ -5,8 +5,8 @@ class Scene < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  validates :title, presence: true
-  validates :content, presence: true
+  validates :title, presence: true,length: { maximum: 20 }
+  validates :content, presence: true,length: { maximum: 100 }
   validates :image, presence: true
   validates :user_id, presence: true
   validates :comic_id, presence: true

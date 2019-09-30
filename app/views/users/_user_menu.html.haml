@@ -1,0 +1,16 @@
+.container--user__left
+  - if @user.image.present?
+    = image_tag @user.image.url,size:"200x200",class: "person--icon"
+  - else
+    = image_tag "person.png",size:"200x200",class: "person--icon"
+  %h3
+    = @user.username
+  .container--user__left__menu
+    = link_to "編集", edit_user_registration_path
+    = link_to "ログアウト", destroy_user_session_path, method: :delete
+    = link_to "名場面を投稿する", select_comics_path
+    - if request.path_info == user_path(current_user)
+      = link_to "いいねした名場面一覧", likes_user_path(current_user)
+    - else
+      = link_to "投稿した名場面一覧", user_path(current_user)
+    

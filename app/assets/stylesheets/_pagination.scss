@@ -1,0 +1,13 @@
+.pagination--block{
+  margin-top:60px;
+  text-align:center;
+  a{
+    color:white;
+    &:hover{
+      color:red;
+    }
+  }
+  .current{
+    color:black;
+  }
+}
