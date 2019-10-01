@@ -1,7 +1,7 @@
 class Scene < ApplicationRecord
   belongs_to :user
   belongs_to :comic
-  has_many :likes
+  has_many :likes, dependent: :destroy
 
   mount_uploader :image, ImageUploader
 
