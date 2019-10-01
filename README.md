@@ -3,6 +3,10 @@
 漫画の名場面を投稿・閲覧できるWebサービスです。転職活動用のポートフォリオとして制作致しました。  
 https://comic-apl.herokuapp.com/
 
+## テストユーザーログイン
+・email: test@scene.com  
+・password: password  
+
 ## 機能一覧
 ・ログイン機能(devise)  
 ・ユーザー編集機能  
