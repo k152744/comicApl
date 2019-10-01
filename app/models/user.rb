@@ -8,6 +8,7 @@ class User < ApplicationRecord
   def remember_me
     true
   end
+  validates :username, presence: true
   
   has_many :scenes
   has_many :likes
