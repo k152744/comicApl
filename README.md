@@ -1,6 +1,7 @@
 # Famous Scenes of Comic
 ## 概要
 漫画の名場面を投稿・閲覧できるWebサービスです。転職活動用のポートフォリオとして制作致しました。
+https://comic-apl.herokuapp.com/
 
 ## 機能一覧
 ・ログイン機能(devise)
@@ -17,7 +18,7 @@
 ・haml
 ・sass
 ・Heroku
-・MySQL(データベース)
+・PostgreSQL(データベース)
 ・Rspec(テスト)
 ・Carrierwave(画像アップロード)
 ・kaminari(ページネーション)
