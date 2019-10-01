@@ -1,29 +1,30 @@
 # Famous Scenes of Comic
 ## 概要
-漫画の名場面を投稿・閲覧できるWebサービスです。転職活動用のポートフォリオとして制作致しました。
+漫画の名場面を投稿・閲覧できるWebサービスです。転職活動用のポートフォリオとして制作致しました。  
 https://comic-apl.herokuapp.com/
 
 ## 機能一覧
-・ログイン機能(devise)
-・ユーザー編集機能
-・漫画一覧ページ
-・名場面投稿・編集・削除機能
-・ページネーション機能
-・テスト実装(Rspec)
-・いいね機能
+・ログイン機能(devise)  
+・ユーザー編集機能  
+・漫画一覧ページ  
+・名場面投稿・編集・削除機能  
+・ページネーション機能  
+・テスト実装(Rspec)  
+・いいね機能  
 
 ## 使用している技術一覧
-・Ruby 2.5.1
-・Ruby on Rails 5.2.3
-・haml
-・sass
-・Heroku
-・PostgreSQL(データベース)
-・Rspec(テスト)
-・Carrierwave(画像アップロード)
-・kaminari(ページネーション)
-・devise(ログイン機能)
-・Github
+・Ruby 2.5.1  
+・Ruby on Rails 5.2.3  
+・haml  
+・sass  
+・Heroku  
+・PostgreSQL(データベース)  
+・Rspec(テスト)  
+・S3  
+・Carrierwave(画像アップロード)  
+・kaminari(ページネーション)  
+・devise(ログイン機能)  
+・Github  
 
 ## テーブル設計図
 
