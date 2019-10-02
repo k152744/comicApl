@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :comics, only: [:index] do
-    resources :scenes do
+    resources :scenes , except: [:show] do
       resources :likes, only: [:create, :destroy]
     end
     collection do

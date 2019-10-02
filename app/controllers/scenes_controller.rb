@@ -1,6 +1,6 @@
 class ScenesController < ApplicationController
   before_action :set_comic
-  before_action :authenticate_user!
+  before_action :set_scene, only: [:edit, :update, :destroy]
 
   def index
     @scenes = @comic.scenes.includes(:user).page(params[:page]).per(5)
@@ -19,16 +19,10 @@ class ScenesController < ApplicationController
     end
   end
 
-  def show
-    @scene = Scene.find(params[:id])
-  end
-
   def edit
-    @scene = Scene.find(params[:id])
   end
 
   def update
-    @scene = Scene.find(params[:id])
     if @scene.update(scene_params)
       redirect_to user_path(current_user)
     else
@@ -37,7 +31,6 @@ class ScenesController < ApplicationController
   end
 
   def destroy
-    @scene = Scene.find(params[:id])
     if current_user.id == @scene.user_id
       if @scene.destroy
         redirect_to user_path(current_user)
@@ -51,6 +44,10 @@ class ScenesController < ApplicationController
 
   def set_comic
     @comic = Comic.find(params[:comic_id])
+  end
+
+  def set_scene
+    @scene = Scene.find(params[:id])
   end
 
   def scene_params

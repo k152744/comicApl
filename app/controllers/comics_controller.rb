@@ -1,12 +1,13 @@
 class ComicsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :set_comics
 
   def index
-    @comics = Comic.all
   end
 
   def select
-    @comics = Comic.all
   end
 
+  def set_comics
+    @comics = Comic.all
+  end
 end
