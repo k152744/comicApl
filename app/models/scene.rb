@@ -9,6 +9,5 @@ class Scene < ApplicationRecord
   validates :content, presence: true,length: { maximum: 100 }
   validates :image, presence: true
   validates :user_id, presence: true
-  validates :comic_id, presence: true
-  
+  validates :comic_id, presence: true  
 end
