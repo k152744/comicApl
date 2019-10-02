@@ -1,12 +1,10 @@
 .container--comics{
-  height:100%;
   padding:40px;
   h2{
     @include h2style;
   }
   &__list{
     min-width: 800px;
-    margin: 0 auto;
     margin-top:40px;
   }
   .comic--content{
